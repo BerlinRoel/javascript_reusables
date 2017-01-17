@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="jquery.popupoverlay.js"></script>
+	<script>
+		$(document).ready(function(){
+		    $('.work-item').click(function(){
+		    	$('#popupDescription .description').html($(this).attr('description'));
+			    $('#popupDescription').popup({
+			      opacity: 0.7
+			    }).popup('show');
+		    });
+		});
+	</script>
+
+	<style>
+	    /* Remove the navbar's default margin-bottom and rounded borders */
+	    .navbar {
+	      margin-bottom: 0;
+	      border-radius: 0;
+	    }
+	    
+	    /* Add a gray background color and some padding to the footer */
+	    footer {
+	      background-color: #f2f2f2;
+	      padding: 25px;
+	    }
+
+	    .popup {
+	    	display: none;
+	    }
+
+	    .popup-viewDescription {
+			width: 450px;
+			border-color: #777;
+			border-width: medium;
+			background: whitesmoke;
+			border-radius: 10px;
+			border-style: solid;
+			padding: 15px;
+		}	    
+	</style>  
+</head>
+<body>
+	<div class="popup" id="popupDescription">
+		<div class="popup-viewDescription">
+			<div class="viewDescription-header">
+				<p class="viewDescription-header-title">Description</p>
+			</div>
+			<div class="viewDescription-body popup-message">
+				<div>
+					<p align="justify" class="description">
+						---	  	
+					</p>
+				</div>
+
+			</div>
+			<div class="viewDescription-footer">
+				<center><button class="popupDescription_close button deleteButton">Close</button></center>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
